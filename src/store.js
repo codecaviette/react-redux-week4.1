@@ -45,10 +45,9 @@ Before completing the reducer file, can create actions folder with an actionType
 In userReducer.js, import actionTypes we just created so they can help us decide which function to run on action. Reducer defines an initial state and then uses a switch statement to decide what fxn to use (each case will return a new state). We created initialState and set up outline for switch.
 Now we'll use thunk and action creators which are functions that create an action when user interacts with UI - Create userActions.js which includes dispatch which triggers Reducer to run
 Go back to userReducer.js and fill in the case DELETE_USER in the switch stmt so that reducer knows what to do when it receives that specific action
-Now we'll connect React components to Redux state with mapStateToProps so components can use state. To do this, Go to Users.js React component and add connect, mapStateToProps
+Now we'll connect React components to Redux state with mapStateToProps so components can use state. To do this, Go to Users.js React component and add connect, mapStateToProps, update this.props... and onClick. Modify Redux state with React components with mapDispatchToProps
 
-Modify Redux state with React components with mapDispatchToProps
-
-
+To add Redux add-user functionality, can start in userReducer or userActions files. We'll start in userActions to create new action creator, then head to userReducer to add reducer fxn.
+In AddUser.js, add connect and mapDispatchToProps. connect React component to Redux store, mapDispatchToProps allows component to access Redux reducer
 
 */

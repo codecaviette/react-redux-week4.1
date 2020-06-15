@@ -28,14 +28,14 @@ export default function (state = initialState, action) {            // Params ar
                 }
             });    
             return {
-                ...state,               // This brings in everything from current state - useful for when you have other pieces of state (ex. products) not being edited by filteredArray which is only editing users array 
+                ...state,               // This brings in everything from current state - useful for when you have other pieces of state outside of users (ex. products) not being edited by filteredArray which is only editing users array 
                 users: filteredArray,   // Returns a NEW array for existing state called users that only includes users with IDs that do NOT match the one from dispatch.
             };
 
-        case ADD_USER:
+        case ADD_USER:                  // Add new user to users state, user added from form
             return {                    // Must use an array method to create NEW array
-                ...state,
-                users: action.payload 
+                ...state,               // This brings in everything from current state - useful for when you also have pieces of state other than users (ex. products, authentication) not being edited by this function
+                users: [...state.users, action.payload]         // This creates new object array for users, bringing in existing users state and add adding the new users object which is equal to action.payload in userActions.js
             }                 
         
         default:                        //This is a fail-safe, likely won't need it bc the incoming action (ie. data) should fit one of the above cases.

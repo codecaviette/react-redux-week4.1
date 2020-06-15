@@ -44,7 +44,7 @@ class Users extends Component {
     // 2nd argument mapDispatchToProps - gives this React component access to Redux Reducers (ie. functions) that change the Redux state
   // 2nd parenthesis: this component's name
 
-const mapStateToProps = (state) => ({           // This fxn gives this component access to state from Redux store, which we can then use as a prop above (this.props.reduxUserState)
+const mapStateToProps = (state) => ({           // This fxn gives this component access to app-level state from Redux store, which we can then use as a prop above (this.props.reduxUserState)
   reduxUserState: state.users.users,            // Key value is set to the flow of state: state from store.js, 1st users from index.js (combines all reducers), 2nd users from userReducer.js
 });
 
