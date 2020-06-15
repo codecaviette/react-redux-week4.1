@@ -3,6 +3,6 @@
 import { combineReducers } from 'redux';
 import userReducer from './userReducer';
 
-export default combineReducers({
-    users: userReducer,             // Take note of key name, as you'll refer to it elsewhere in app. Here's where we'd put ALL of our reducers if have multiple. 
+export default combineReducers({    // Here's where we'd put ALL of our reducers if have multiple. 
+    users: userReducer,             // Key name should make sense. In this case, it should be something like "users" since the reducer is "userReducer". Take note of key name, as you'll refer to it elsewhere in app. 
 })
